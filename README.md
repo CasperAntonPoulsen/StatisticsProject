@@ -18,4 +18,17 @@ The wind data has two distinct data points, being the wind speed (numeric) and t
 
 ### Data alignment
 
+The energy data has 2 data points, a timestamp and the energy produced in the past hour. The energy data has no missing values and one time step is one hour
+
+The weather forecast data has 4 data points, a timestamp, wind direction, wind speed and lead time. The interesting data for alligment is the lead time measured in hours and the timestamp. Lead time is the amount of time the prediction was made ahead of time. We are going to make the assumption that the lower the lead time, the more accurate the weather forecast is. Therefor for every hour we choose the forecast for that timestep with the lowest lead time. For any missing values, we assume the weather is unchanged ince the last none missing timestep and fill it in.
+
+Now the data can be alligned by the timestamp and there will be a data point for each hour
+
+### Data size
+
+Since weather is seasonal, it is not always sound to use data from the entire year. We propose that we limit the data to 90 days (3 months) to limit the amount of temporal bias from previous seasons where the weather is different.
+
+This also better for simpler statistical models, which cannot take the added complexity of the changing seasons into account. 
+
+More complex models like multi-layer perceptrons and other neural models, might be able to take the added complexity into account, but our hypothosis is that the added complexity and computation time this approach would cost, is not worth the meager accucary increase we expect to get from this approach over a more simple one.
 
