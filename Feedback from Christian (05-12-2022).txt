@@ -1,0 +1,27 @@
+Feedback from Christian (05-12-2022)
+
+Not a machine learning project. Focus should be more on the methods than results. We are not aiming at good results. 
+
+RQ -> Hypothesis -> Methods -> Experiments -> Evaluation -> Results -> Conclusions
+
+Coherent argument. He wants to see us describe the arrows in the structure above. 
+
+This is mostly about the hypothesis. More western winds gives more power. 
+
+He is interested in a hypothesis about the statistical method. If you try to predict something, your hypo could be if the statistical method works better than another method. 
+
+Ways of having different parts each. 1) Different questions each. 2) Take responsible of different steps of experiments. They are not judging the difficulty of the different parts that we each are responsible for. 
+
+We should be able to answer, why did you believe this was going to work?
+
+Argument about what can Linear Regrerssion capture, that differs from a Neural Network. Since NN can capture all that LR can, but also more. Why is this good/bad? Risk of overfitting, advantage/disadvantage. 
+
+They havent covered NN because they want us to learn something else. 
+
+Compare Feed Forward NN, what complications does it add. Seasonal variation, extract seasonal means. 
+
+Interesting RQ: Think of different ways to compare seasonal variation with different methods. 
+
+Seasonal pattern, if you always have a situaition where the weather changes in end of september because of autumn. Predicting based on very reasont data. You could compare with data from a year ago instead of a week ago. 
+
+Argument on probaties of the method compared to probaties of the RQ. 
