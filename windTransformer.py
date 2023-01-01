@@ -30,3 +30,20 @@ class WindVectorTransformer(BaseEstimator, TransformerMixin):
 
 	def fit(self, X, y = None):
 		return self
+
+
+class WindDegreeTransformer(BaseEstimator, TransformerMixin):
+	def __init__(self):
+		self.directions =  ["N","NNE","NE","ENE","E","ESE","SE","SSE","S","SSW","SW","WSW","W","WNW","NW","NNW"]
+		self.md_dict = {}
+		for i in range(len(self.directions)):
+			md = 270 - (i*22.5)
+			if md < 0:
+				md += 360
+			self.md_dict[self.directions[i]]=md
+
+	def transform(self, X, y = None):
+		return X["Direction"].apply(lambda x: self.md_dict[x])
+
+	def fit(self, X, y = None):
+		return self
