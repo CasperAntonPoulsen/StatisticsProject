@@ -43,7 +43,10 @@ class WindDegreeTransformer(BaseEstimator, TransformerMixin):
 			self.md_dict[self.directions[i]]=md
 
 	def transform(self, X, y = None):
-		return X["Direction"].apply(lambda x: self.md_dict[x])
+		X_ = X.copy()
+		X_ = X_.Direction.apply(lambda x : self.md_dict[x])
+
+		return X_.to_frame()
 
 	def fit(self, X, y = None):
 		return self
